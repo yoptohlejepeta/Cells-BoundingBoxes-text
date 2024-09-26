@@ -1,0 +1,31 @@
+\documentclass{article}
+
+
+\usepackage[czech]{babel} % czech language
+\usepackage{hyperref} % for clickable links, hidelinks hides the ugly boxes
+
+
+\begin{document}
+
+\section{Zadání}
+
+Cílem této bakalářské práce je navrhnout a implementovat metody pro automatizované vytváření bounding boxů buněk ze snímků bronchoalveolární laváže (BAL) tak, aby bylo možné generovat specifické datové sady snímků individuálních buněk. Ty mohou být v budoucnu využity pro automatickou klasifikaci buněk z BAL do jednotlivých skupin např. pomocí konvolučních neuronových sítí. Tvorba bounding boxů bude využívat segmentaci obalů buněk například pomocí tzv. Watershed algoritmu nebo pomocí techniky podpůrných vektorů (SVM). Snímky buněk z BAL budou poskytnuty na základě předchozí spolupráce s lékaři z Masarykovy nemocnice v Ústí nad Labem, o.z. Pro posouzení kvality ohraničení budou v práci navrženy vhodné metriky. Vznik takovýchto datových sad, a tím i aplikace metod pro klasifikaci buněk přispěje ke zvýšení automatizace vyšetřeních založených na BAL snímcích, kde je cílem získat diferenciální počet jednotlivých typů buněk.
+
+
+\begin{enumerate}
+    \item Úvod do problematiky analýzy snímků buněk
+    \item Prezentace metod tvorby bounding boxů
+    \item Popis vstupních dat
+    \item Návrh a implementace schémat tvorby bounding boxů
+    \item Vyhodnocení přesnosti a vhodnosti vytvořených hranic
+    \item Diskuze dosažených výsledků
+\end{enumerate}
+
+\begin{enumerate}
+    \item FREEMAN, H. a SHAPIRA, R. \textit{Determining the minimum-area encasing rectangle for an arbitrary closed curve}. Online. Communications of the ACM. 1975, roč. 18, č. 7, s. 409-413. ISSN 0001-0782. Dostupné z: \url{https://doi.org/10.1145/360881.360919}.
+    \item MOHAMMED, Emad A.; FAR, Behrouz H.; MOHAMED, Mostafa M.A. a NAUGLER, Christopher. \textit{Application of Support Vector Machine and k-means clustering algorithms for robust chronic lymphocytic leukemia color cell segmentation}. Online. In: 2013 IEEE 15th International Conference on e-Health Networking, Applications and Services (Healthcom 2013). IEEE, 2013, s. 622-626. ISBN 978-1-4673-5801-9. Dostupné z: \url{https://doi.org/10.1109/HealthCom.2013.6720751}.
+    \item CHECK, Irene J.; GOWITT, Gerald T. a STATON, Gerald W. \textit{Bronchoalveolar Lavage Cell Differential in the Diagnosis of Sarcoid Interstitial Lung Disease: Likelihood Ratios Based on Computerized Data Base}. Online. American Journal of Clinical Pathology. 1985, roč. 84, č. 6, s. 744-747. ISSN 1943-7722. Dostupné z: \url{https://doi.org/10.1093/ajcp/84.6.744}.
+    \item KORNILOV, Anton S. a SAFONOV, Ilia V. \textit{An Overview of Watershed Algorithm Implementations in Open Source Libraries}. Online. Journal of Imaging. 2018, roč. 4, č. 10. ISSN 2313-433X. Dostupné z: \url{https://doi.org/10.3390/jimaging4100123}. 
+\end{enumerate}
+
+\end{document}
