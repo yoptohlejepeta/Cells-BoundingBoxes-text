@@ -17,18 +17,16 @@
 \usepackage{bm} % for bold math symbols
 \usepackage{tocloft} % for customizing table of contents
 \usepackage{multicol} % for multiple columns
-\usepackage{hyperref} % for clickable links
 \usepackage{textcase} % for uppercasing text
 \usepackage{tikz} % for drawing
 \usepackage{float} % for floating images
-\usepackage{siunitx} % for SI units
 \usepackage{caption} % for customizing captions
 \usepackage{hhline} % for double lines in tables
 \usetikzlibrary{shapes.geometric} % for drawing
 
 % toc font
 \renewcommand{\cfttoctitlefont}{\normalfont\Huge\sffamily\bfseries}
-\renewcommand{\cftchapfont}{\sffamily\normalsize}
+\renewcommand{\cftchapfont}{\sffamily\normalsize\bfseries}
 \renewcommand{\cftsecfont}{\sffamily\normalsize}
 
 
@@ -36,41 +34,31 @@
 % for customizing bibliography title
 \addto{\captionsczech}{\renewcommand{\bibname}{Seznam zdrojů}}
 
-\fancypagestyle{plain}{
-    \renewcommand{\headrulewidth}{0pt}
-    \fancyhf{}
-    \fancyfoot[C]{\sffamily\selectfont--~\thepage~--}
-}
-
-\pagestyle{plain}
-\fancyhead{}
-\fancyhead[R]{\sffamily\rightmark}
-\fancyhead[L]{\sffamily\thechapter\ \chaptername}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE]{\nouppercase{\chaptername}}
+\fancyhead[RO]{\nouppercase{\chaptername}}
+\fancyfoot[C]{\sffamily\selectfont--~\thepage~--}
 \setlength{\headheight}{15pt}
 \renewcommand{\headrulewidth}{0.4pt}
 
 \renewcommand{\sectionmark}[1]{\markright{#1}}
 
 % for customizing chapter titles
-\titleformat{\chapter}[display]{\normalfont\sffamily\bfseries}{}{0pt}{\Huge}
+\titleformat{\chapter}[display]{\sffamily\bfseries}{}{0pt}{\Huge}
 
 % for customizing section titles
-\titleformat{\section}{\normalfont\Large\sffamily\bfseries}{\thesection}{1em}{}
+\titleformat{\section}{\Large\sffamily\bfseries}{\thesection}{1em}{}
 
 % for customizing subsection titles
 \titleformat{\subsection}{\large\sffamily\bfseries}{\thesubsection}{1em}{}
 
 % for customizing subsubsection titles (no new lines after title)
-\titleformat{\subsubsection}[runin]{\normalfont\sffamily\bfseries}{\thesubsubsection}{1em}{}
+\titleformat{\subsubsection}[runin]{\sffamily\bfseries}{\thesubsubsection}{1em}{}
 
 \DeclareCaptionLabelFormat{myformat}{\sffamily#1 #2}
 \captionsetup[figure]{labelformat=myformat}
 
-
-
-\author{Petr Kotlan}
-\title{Optimalizace investičních prostředků z hlediska výnosu fotovoltaických elektráren}
-\date{}
 
 \begin{document}
 
@@ -79,7 +67,7 @@
 \mbox{}
 
 
-% \includepdf[pages=-]{static/podklad_bp.pdf}
+\includepdf[pages=-]{static/podklad_bp.pdf}
 \input{components/prohlaseni.tex}
 \thispagestyle{empty}
 \mbox{}
@@ -106,14 +94,19 @@
 \mbox{}
 \newpage
 
-\chapter*{Úvod}
-\renewcommand{\chaptername}{Úvod}
 \input{chapters/uvod.tex}
+
+\input{chapters/metody.tex}
+
+\input{chapters/porovnani.tex}
+
+\input{chapters/segmentace.tex}
+
+\input{chapters/bboxy.tex}
 
 
 \addcontentsline{toc}{chapter}{Seznam zdrojů}
 \bibliographystyle{plain}
-\include{components/citace}
-% \bibliography{bibliografie}
-
+% \include{components/citace}
+\bibliography{bibliografie}
 \end{document}
